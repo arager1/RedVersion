@@ -24,5 +24,5 @@ IF(NOT EXISTS "${PROJECT_SOURCE_DIR}/ConsoleGameEngine/Source/CMakeLists.txt")
     MESSAGE(FATAL_ERROR "The submodules were not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
 ENDIF()
 
-ADD_SUBDIRECTORY(${PROJECT_SOURCE_DIR}/ConsoleGameEngine/Source)
+ADD_SUBDIRECTORY(${PROJECT_SOURCE_DIR}/ConsoleGameEngine)
 ADD_SUBDIRECTORY(Source)
