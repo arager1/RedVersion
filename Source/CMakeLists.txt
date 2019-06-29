@@ -1,4 +1,4 @@
 
 
-ADD_SUBDIRECTORY(RedVersion)
+ADD_SUBDIRECTORY(ConsoleGame)
 ADD_SUBDIRECTORY(StateMachine)
