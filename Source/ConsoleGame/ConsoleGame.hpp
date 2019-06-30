@@ -1,10 +1,12 @@
-#ifndef ENGINE_CONSOLEGAME_HPP
-#define ENGINE_CONSOLEGAME_HPP
+#ifndef ENGINE_REDVERSION_HPP
+#define ENGINE_REDVERSION_HPP
 
 #include "AbstractGame.hpp"
+#include "PointerLogic.hpp"
 
 // TEMP
 #include <iostream>
+#include <memory>
 
 namespace Engine
 {
@@ -19,7 +21,7 @@ public:
 	ConsoleGame(ConsoleGame&&) = default;
 	ConsoleGame& operator=(const ConsoleGame&) = default;
 	ConsoleGame& operator=(ConsoleGame&&) = default;
-	virtual ~ConsoleGame() = default;
+	virtual ~ConsoleGame() override = default;
 
 	void init() override
 	{
@@ -45,8 +47,13 @@ private:
 	int m_count{0};
 };
 
+std::unique_ptr<AbstractGame> makeConsoleGame()
+{
+	return IntegralMath::PointerLogic::makeUnique<ConsoleGame>();
+}
+
 
 
 } // namespace Engine
 
-#endif // ENGINE_CONSOLEGAME_HPP
+#endif // ENGINE_REDVERSION_HPP
